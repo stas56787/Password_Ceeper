@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<ArrayOfAccount xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Account>
+    <SiteURL>vk.com</SiteURL>
+    <Username>stas5678</Username>
+    <Password>supercoolPassword</Password>
+  </Account>
+  <Account>
+    <SiteURL>pornhub.com</SiteURL>
+    <Username>viktor_super_dick</Username>
+    <Password>myDickIsSmall</Password>
+  </Account>
+  <Account>
+    <SiteURL>youtube.com</SiteURL>
+    <Username>sta4ek</Username>
+    <Password>protectYourASS</Password>
+  </Account>
+  <Account>
+    <SiteURL>vseti.by</SiteURL>
+    <Username>govnomes228</Username>
+    <Password>kuruSigaretuIPiuPivoVPadike</Password>
+  </Account>
+  <Account>
+    <SiteURL>gachi.com</SiteURL>
+    <Username>DungeonMaster</Username>
+    <Password>300bucks</Password>
+  </Account>
+</ArrayOfAccount>
