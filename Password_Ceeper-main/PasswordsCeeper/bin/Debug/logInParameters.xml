@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<LoginParameters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LoginPassword>2FeO34RYzgb7xbt2pYxcpA==</LoginPassword>
+  <SecretQuestion>какой пароль</SecretQuestion>
+  <SecretAnswer>2FeO34RYzgb7xbt2pYxcpA==</SecretAnswer>
+</LoginParameters>
