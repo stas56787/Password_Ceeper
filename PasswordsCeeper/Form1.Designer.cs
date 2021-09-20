@@ -45,8 +45,9 @@ namespace PasswordsCeeper
             // 
             // textBoxPassword
             // 
+            this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxPassword.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPassword.Location = new System.Drawing.Point(124, 76);
+            this.textBoxPassword.Location = new System.Drawing.Point(131, 115);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '•';
             this.textBoxPassword.Size = new System.Drawing.Size(193, 26);
@@ -54,8 +55,9 @@ namespace PasswordsCeeper
             // 
             // textBoxQuestion
             // 
+            this.textBoxQuestion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxQuestion.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxQuestion.Location = new System.Drawing.Point(124, 126);
+            this.textBoxQuestion.Location = new System.Drawing.Point(131, 89);
             this.textBoxQuestion.Name = "textBoxQuestion";
             this.textBoxQuestion.Size = new System.Drawing.Size(193, 26);
             this.textBoxQuestion.TabIndex = 1;
@@ -63,8 +65,9 @@ namespace PasswordsCeeper
             // 
             // textBoxAnswer
             // 
+            this.textBoxAnswer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxAnswer.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxAnswer.Location = new System.Drawing.Point(124, 176);
+            this.textBoxAnswer.Location = new System.Drawing.Point(131, 139);
             this.textBoxAnswer.Name = "textBoxAnswer";
             this.textBoxAnswer.PasswordChar = '•';
             this.textBoxAnswer.Size = new System.Drawing.Size(193, 26);
@@ -73,8 +76,9 @@ namespace PasswordsCeeper
             // 
             // buttonApply
             // 
+            this.buttonApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonApply.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonApply.Location = new System.Drawing.Point(209, 222);
+            this.buttonApply.Location = new System.Drawing.Point(216, 185);
             this.buttonApply.Name = "buttonApply";
             this.buttonApply.Size = new System.Drawing.Size(108, 35);
             this.buttonApply.TabIndex = 3;
@@ -87,7 +91,7 @@ namespace PasswordsCeeper
             // 
             this.labelPassword.AutoSize = true;
             this.labelPassword.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelPassword.Location = new System.Drawing.Point(121, 55);
+            this.labelPassword.Location = new System.Drawing.Point(128, 94);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(55, 18);
             this.labelPassword.TabIndex = 4;
@@ -97,7 +101,7 @@ namespace PasswordsCeeper
             // 
             this.labelQuestion.AutoSize = true;
             this.labelQuestion.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelQuestion.Location = new System.Drawing.Point(121, 105);
+            this.labelQuestion.Location = new System.Drawing.Point(128, 68);
             this.labelQuestion.Name = "labelQuestion";
             this.labelQuestion.Size = new System.Drawing.Size(127, 18);
             this.labelQuestion.TabIndex = 5;
@@ -108,7 +112,7 @@ namespace PasswordsCeeper
             // 
             this.labelAnswer.AutoSize = true;
             this.labelAnswer.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelAnswer.Location = new System.Drawing.Point(121, 155);
+            this.labelAnswer.Location = new System.Drawing.Point(128, 118);
             this.labelAnswer.Name = "labelAnswer";
             this.labelAnswer.Size = new System.Drawing.Size(183, 18);
             this.labelAnswer.TabIndex = 6;
@@ -117,8 +121,9 @@ namespace PasswordsCeeper
             // 
             // buttonLogin
             // 
+            this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogin.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonLogin.Location = new System.Drawing.Point(229, 222);
+            this.buttonLogin.Location = new System.Drawing.Point(236, 185);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(88, 35);
             this.buttonLogin.TabIndex = 7;
@@ -130,7 +135,7 @@ namespace PasswordsCeeper
             // 
             this.labelWrongPassword.AutoSize = true;
             this.labelWrongPassword.ForeColor = System.Drawing.Color.Red;
-            this.labelWrongPassword.Location = new System.Drawing.Point(121, 105);
+            this.labelWrongPassword.Location = new System.Drawing.Point(128, 145);
             this.labelWrongPassword.Name = "labelWrongPassword";
             this.labelWrongPassword.Size = new System.Drawing.Size(98, 13);
             this.labelWrongPassword.TabIndex = 8;
@@ -140,7 +145,7 @@ namespace PasswordsCeeper
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 105);
+            this.label1.Location = new System.Drawing.Point(19, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(412, 13);
             this.label1.TabIndex = 9;
@@ -150,7 +155,7 @@ namespace PasswordsCeeper
             // labelSecretQuestion
             // 
             this.labelSecretQuestion.AutoSize = true;
-            this.labelSecretQuestion.Location = new System.Drawing.Point(121, 132);
+            this.labelSecretQuestion.Location = new System.Drawing.Point(128, 95);
             this.labelSecretQuestion.Name = "labelSecretQuestion";
             this.labelSecretQuestion.Size = new System.Drawing.Size(35, 13);
             this.labelSecretQuestion.TabIndex = 10;
@@ -161,7 +166,7 @@ namespace PasswordsCeeper
             // 
             this.labelWrongAnswer.AutoSize = true;
             this.labelWrongAnswer.ForeColor = System.Drawing.Color.Red;
-            this.labelWrongAnswer.Location = new System.Drawing.Point(121, 206);
+            this.labelWrongAnswer.Location = new System.Drawing.Point(128, 169);
             this.labelWrongAnswer.Name = "labelWrongAnswer";
             this.labelWrongAnswer.Size = new System.Drawing.Size(90, 13);
             this.labelWrongAnswer.TabIndex = 11;
@@ -172,7 +177,7 @@ namespace PasswordsCeeper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(447, 319);
+            this.ClientSize = new System.Drawing.Size(447, 286);
             this.Controls.Add(this.labelWrongAnswer);
             this.Controls.Add(this.labelSecretQuestion);
             this.Controls.Add(this.label1);
@@ -185,6 +190,8 @@ namespace PasswordsCeeper
             this.Controls.Add(this.textBoxAnswer);
             this.Controls.Add(this.textBoxQuestion);
             this.Controls.Add(this.textBoxPassword);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авторизация";

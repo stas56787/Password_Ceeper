@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
+using System.IO;
 
 namespace PasswordsCeeper
 {
@@ -15,6 +17,9 @@ namespace PasswordsCeeper
         private readonly Form _loginForm = new Form();
         public int selectedIndex = -1;
         bool isFirstLaunch = true;
+        private string siteURLBeforeEdit;
+        private string usernameBeforeEdit;
+        private string passwordBeforeEdit;
 
         public MainForm(Form loginForm)
         {
@@ -22,6 +27,111 @@ namespace PasswordsCeeper
 
             Storage.LoadData();
             _loginForm = loginForm;
+
+            //Encrypt();
+
+            //Decrypt();
+        }
+
+        private void Encrypt()
+        {
+            try
+            {
+                string textToEncrypt = File.ReadAllText("acc.xml");
+
+                using (FileStream fileStream = new FileStream("acc.xml", FileMode.OpenOrCreate))
+                {
+                    using (Aes aes = Aes.Create())
+                    {
+                        byte[] key =
+                        {
+                0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08,
+                0x09, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16
+            };
+                        aes.Key = key;
+
+                        ////// ключ 128 бит на основе пароля //////
+                        // если длина пароля больше 16, надо чинить
+                        
+                        //string pass = "qwerty";
+                        //byte[] bytes = Encoding.Default.GetBytes(pass + new string('0', 16 - pass.Length));
+                        //aes.Key = bytes;
+
+                        byte[] iv = aes.IV;
+                        fileStream.Write(iv, 0, iv.Length);
+
+                        using (CryptoStream cryptoStream = new CryptoStream(
+                            fileStream,
+                            aes.CreateEncryptor(),
+                            CryptoStreamMode.Write))
+                        {
+                            using (StreamWriter encryptWriter = new StreamWriter(cryptoStream))
+                            {
+                                encryptWriter.WriteLine(textToEncrypt);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"The encryption failed. {ex}");
+            }
+        }
+
+        private async void Decrypt()
+        {
+            try
+            {
+                string decryptedMessage;
+
+                using (FileStream fileStream = new FileStream("acc.xml", FileMode.Open))
+                {
+                    using (Aes aes = Aes.Create())
+                    {
+                        byte[] iv = new byte[aes.IV.Length];
+                        int numBytesToRead = aes.IV.Length;
+                        int numBytesRead = 0;
+                        while (numBytesToRead > 0)
+                        {
+                            int n = fileStream.Read(iv, numBytesRead, numBytesToRead);
+                            if (n == 0) break;
+
+                            numBytesRead += n;
+                            numBytesToRead -= n;
+                        }
+
+                        byte[] key =
+                        {
+                0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08,
+                0x09, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16
+            };
+
+                        ////// ключ 128 бит на основе пароля //////
+                        ///
+                        // string pass = "qwerty";
+                        // byte[] bytes = Encoding.Default.GetBytes(pass + new string('0', 16 - pass.Length));
+
+                        using (CryptoStream cryptoStream = new CryptoStream(
+                           fileStream,
+                           aes.CreateDecryptor(key, iv),
+                           CryptoStreamMode.Read))
+                        {
+                            using (StreamReader decryptReader = new StreamReader(cryptoStream))
+                            {
+                                decryptedMessage = await decryptReader.ReadToEndAsync();
+                                //MessageBox.Show($"The decrypted original message: {decryptedMessage}");
+                            }
+                        }
+                    }
+                }
+
+                File.WriteAllText("acc.xml", decryptedMessage);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"The decryption failed. {ex}");
+            }
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -100,6 +210,10 @@ namespace PasswordsCeeper
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
+            siteURLBeforeEdit = linkLabelSiteURL.Text;
+            usernameBeforeEdit = textBoxUsername.Text;
+            passwordBeforeEdit = textBoxPassword.Text;
+
             textBoxSiteURL.Text = linkLabelSiteURL.Text;
             linkLabelSiteURL.Visible = false;
 
@@ -109,6 +223,7 @@ namespace PasswordsCeeper
 
             buttonEdit.Visible = false;
             buttonSave.Visible = true;
+            buttonCancel.Visible = true;
             buttonDelete.Visible = false;
             buttonAddAccount.Enabled = false;
 
@@ -133,6 +248,7 @@ namespace PasswordsCeeper
 
             buttonEdit.Visible = true;
             buttonSave.Visible = false;
+            buttonCancel.Visible = false;
             buttonDelete.Visible = true;
             buttonAddAccount.Enabled = true;
 
@@ -147,6 +263,32 @@ namespace PasswordsCeeper
         {
             listBoxAccounts.ClearSelected();
             panel1.Visible = false;
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            linkLabelSiteURL.Text = siteURLBeforeEdit;
+            textBoxUsername.Text = usernameBeforeEdit;
+            textBoxPassword.Text = passwordBeforeEdit;
+
+            linkLabelSiteURL.Visible = true;
+
+            textBoxSiteURL.Clear();
+            textBoxSiteURL.Visible = false;
+
+            textBoxUsername.ReadOnly = true;
+            textBoxPassword.ReadOnly = true;
+
+            buttonEdit.Visible = true;
+            buttonSave.Visible = false;
+            buttonCancel.Visible = false;
+            buttonDelete.Visible = true;
+            buttonAddAccount.Enabled = true;
+
+            pictureBoxClose.Visible = true;
+            pictureBoxCopy.Visible = true;
+
+            listBoxAccounts.Enabled = true;
         }
     }
 }

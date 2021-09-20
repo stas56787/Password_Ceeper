@@ -55,7 +55,7 @@ namespace PasswordsCeeper
         {
             WriteParameters();
 
-            this.Hide();
+            Hide();
 
             MainForm mainForm = new MainForm(this);
             mainForm.Show();
@@ -91,7 +91,7 @@ namespace PasswordsCeeper
             {
                 incorrectLoginTry = 0;
 
-                this.Hide();
+                Hide();
 
                 MainForm mainForm = new MainForm(this);
                 mainForm.Show();
@@ -106,7 +106,7 @@ namespace PasswordsCeeper
                 incorrectLoginTry = 0;
                 labelWrongPassword.Visible = false;
 
-                this.Hide();
+                Hide();
 
                 MainForm mainForm = new MainForm(this);
                 mainForm.Show();

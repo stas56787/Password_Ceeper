@@ -34,6 +34,11 @@ namespace PasswordsCeeper
             this.listBoxAccounts = new System.Windows.Forms.ListBox();
             this.buttonAddAccount = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBoxClose = new System.Windows.Forms.PictureBox();
+            this.buttonSave = new System.Windows.Forms.Button();
+            this.buttonEdit = new System.Windows.Forms.Button();
+            this.pictureBoxCopy = new System.Windows.Forms.PictureBox();
+            this.linkLabelSiteURL = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,15 +47,11 @@ namespace PasswordsCeeper
             this.textBoxSiteURL = new System.Windows.Forms.TextBox();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.labelChoose = new System.Windows.Forms.Label();
-            this.linkLabelSiteURL = new System.Windows.Forms.LinkLabel();
-            this.pictureBoxCopy = new System.Windows.Forms.PictureBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.buttonEdit = new System.Windows.Forms.Button();
-            this.buttonSave = new System.Windows.Forms.Button();
-            this.pictureBoxClose = new System.Windows.Forms.PictureBox();
+            this.buttonCancel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCopy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCopy)).BeginInit();
             this.SuspendLayout();
             // 
             // listBoxAccounts
@@ -80,6 +81,7 @@ namespace PasswordsCeeper
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.buttonCancel);
             this.panel1.Controls.Add(this.pictureBoxClose);
             this.panel1.Controls.Add(this.buttonSave);
             this.panel1.Controls.Add(this.buttonEdit);
@@ -97,6 +99,63 @@ namespace PasswordsCeeper
             this.panel1.Size = new System.Drawing.Size(593, 491);
             this.panel1.TabIndex = 2;
             this.panel1.Visible = false;
+            // 
+            // pictureBoxClose
+            // 
+            this.pictureBoxClose.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxClose.Image")));
+            this.pictureBoxClose.Location = new System.Drawing.Point(545, 15);
+            this.pictureBoxClose.Name = "pictureBoxClose";
+            this.pictureBoxClose.Size = new System.Drawing.Size(30, 30);
+            this.pictureBoxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxClose.TabIndex = 13;
+            this.pictureBoxClose.TabStop = false;
+            this.pictureBoxClose.Click += new System.EventHandler(this.pictureBoxClose_Click);
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSave.Location = new System.Drawing.Point(419, 454);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(75, 23);
+            this.buttonSave.TabIndex = 12;
+            this.buttonSave.Text = "Сохранить";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Visible = false;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
+            // buttonEdit
+            // 
+            this.buttonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEdit.Location = new System.Drawing.Point(387, 454);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Size = new System.Drawing.Size(107, 23);
+            this.buttonEdit.TabIndex = 11;
+            this.buttonEdit.Text = "Редактировать";
+            this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
+            // 
+            // pictureBoxCopy
+            // 
+            this.pictureBoxCopy.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCopy.Image")));
+            this.pictureBoxCopy.Location = new System.Drawing.Point(319, 54);
+            this.pictureBoxCopy.Name = "pictureBoxCopy";
+            this.pictureBoxCopy.Size = new System.Drawing.Size(25, 25);
+            this.pictureBoxCopy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxCopy.TabIndex = 10;
+            this.pictureBoxCopy.TabStop = false;
+            this.pictureBoxCopy.Click += new System.EventHandler(this.pictureBoxCopy_Click);
+            // 
+            // linkLabelSiteURL
+            // 
+            this.linkLabelSiteURL.AutoSize = true;
+            this.linkLabelSiteURL.Cursor = System.Windows.Forms.Cursors.Default;
+            this.linkLabelSiteURL.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.linkLabelSiteURL.Location = new System.Drawing.Point(29, 53);
+            this.linkLabelSiteURL.Name = "linkLabelSiteURL";
+            this.linkLabelSiteURL.Size = new System.Drawing.Size(87, 23);
+            this.linkLabelSiteURL.TabIndex = 9;
+            this.linkLabelSiteURL.TabStop = true;
+            this.linkLabelSiteURL.Text = "linkLabel1";
             // 
             // label3
             // 
@@ -179,29 +238,6 @@ namespace PasswordsCeeper
             this.labelChoose.TabIndex = 0;
             this.labelChoose.Text = "Выберите элемент";
             // 
-            // linkLabelSiteURL
-            // 
-            this.linkLabelSiteURL.AutoSize = true;
-            this.linkLabelSiteURL.Cursor = System.Windows.Forms.Cursors.Default;
-            this.linkLabelSiteURL.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.linkLabelSiteURL.Location = new System.Drawing.Point(29, 53);
-            this.linkLabelSiteURL.Name = "linkLabelSiteURL";
-            this.linkLabelSiteURL.Size = new System.Drawing.Size(87, 23);
-            this.linkLabelSiteURL.TabIndex = 9;
-            this.linkLabelSiteURL.TabStop = true;
-            this.linkLabelSiteURL.Text = "linkLabel1";
-            // 
-            // pictureBoxCopy
-            // 
-            this.pictureBoxCopy.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCopy.Image")));
-            this.pictureBoxCopy.Location = new System.Drawing.Point(319, 54);
-            this.pictureBoxCopy.Name = "pictureBoxCopy";
-            this.pictureBoxCopy.Size = new System.Drawing.Size(25, 25);
-            this.pictureBoxCopy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxCopy.TabIndex = 10;
-            this.pictureBoxCopy.TabStop = false;
-            this.pictureBoxCopy.Click += new System.EventHandler(this.pictureBoxCopy_Click);
-            // 
             // toolTip
             // 
             this.toolTip.AutoPopDelay = 1000000;
@@ -209,39 +245,17 @@ namespace PasswordsCeeper
             this.toolTip.ReshowDelay = 1;
             this.toolTip.ShowAlways = true;
             // 
-            // buttonEdit
+            // buttonCancel
             // 
-            this.buttonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEdit.Location = new System.Drawing.Point(387, 454);
-            this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(107, 23);
-            this.buttonEdit.TabIndex = 11;
-            this.buttonEdit.Text = "Редактировать";
-            this.buttonEdit.UseVisualStyleBackColor = true;
-            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSave.Location = new System.Drawing.Point(500, 454);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(75, 23);
-            this.buttonSave.TabIndex = 12;
-            this.buttonSave.Text = "Сохранить";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Visible = false;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
-            // 
-            // pictureBoxClose
-            // 
-            this.pictureBoxClose.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxClose.Image")));
-            this.pictureBoxClose.Location = new System.Drawing.Point(545, 15);
-            this.pictureBoxClose.Name = "pictureBoxClose";
-            this.pictureBoxClose.Size = new System.Drawing.Size(30, 30);
-            this.pictureBoxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxClose.TabIndex = 13;
-            this.pictureBoxClose.TabStop = false;
-            this.pictureBoxClose.Click += new System.EventHandler(this.pictureBoxClose_Click);
+            this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCancel.Location = new System.Drawing.Point(500, 454);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancel.TabIndex = 14;
+            this.buttonCancel.Text = "Отмена";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Visible = false;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // MainForm
             // 
@@ -260,8 +274,8 @@ namespace PasswordsCeeper
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCopy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCopy)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,5 +300,6 @@ namespace PasswordsCeeper
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.PictureBox pictureBoxClose;
+        private System.Windows.Forms.Button buttonCancel;
     }
 }

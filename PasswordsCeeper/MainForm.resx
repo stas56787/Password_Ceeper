@@ -120,18 +120,18 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBoxClose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAHpJREFUSEvt
-        lEEKgDAMBPMJf+H/b77CB2lWCIRSQ2iSS9uBoNXN7K20WZeT5+I5vpMNMshixw0WHp6bxyrBP2SQxY4b
-        vfhX4smYWIKwXOiJ0uRCK0yVC7okXQ5KC7QcT/0eLmnlOPe+DWGJwiUeQaik/Koov+w200D0Aje5QsHG
-        AAZ1AAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAH9JREFUSEtj
+        YBgFIzYEdIA+3wvEokSEAEgNSC1ID9EApOE/EF8mYAnIcJAakFqQHqIBskZclhCjBq+F+Ayg2HCYzdgM
+        oprhuCyBhTmh+CE6PkAKkV1NTOSTZDjNLUAPc6oGEU0jmabJlJikSIwanJFN86KC5oUdyel4VMPgDQEA
+        N7lCwaaqoRsAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="pictureBoxCopy.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAACJSURBVEhL7ZW5DcAgEAQpz/2XYBdiQ3DJih0eAZFHugDtDhcg2ekkV54nzzs43dx5ahe0ppth
-        YZTjC2bepPSLVyVKweybFK9KFAI994COhlg2oKMhlg3oaIhlAzoaYtmAjoZYNqCjIZYN6GiIZQM6GmLZ
-        gI6GWDYMOf+CJtsXLP9cK8t/OBtI6QPQiqall+ikkgAAAABJRU5ErkJggg==
+        YQUAAABsSURBVEhLY2CgI/AA2vUYiP+TiIl24iMSDYY5hGgLSNZAtMlQhXS3gJw4AcUhSB9WgO4DcuME
+        pI8oC8gJMrx60CVHLcCIh9EgAgXJaCoiWLyRlHdIUkxOgTlqAcEIo3pxjW4j1Sscgl4iRwEA0IqmpSxk
+        fLkAAAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
